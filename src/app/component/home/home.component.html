@@ -235,7 +235,6 @@
                     <mat-icon> insert_drive_file </mat-icon>
                   </button> -->
               </form>
-
               <!-- </mat-card> -->
             </div>
             <div class="col-md-1"></div>
@@ -409,12 +408,10 @@
           </div>
         </form>
       </mat-step>
-
       <mat-step [stepControl]="finalFormGroup">
         <ng-template matStepLabel>Final Checks
           <span style="color: gainsboro">&nbsp;5 of 5</span>
         </ng-template>
-
         <mat-card class="status-card">
           <mat-card-content>
             <h2 class="example-h2">Verification Status</h2>
@@ -433,7 +430,6 @@
             <p class="verification" *ngIf="showVerification">Verification Done.</p>
           </mat-card-content>
         </mat-card>
-
 
         <div class="row" style="margin-top: 25px">
           <div class="col-md-1"></div>
@@ -552,7 +548,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default yesno" data-dismiss="modal" (click)="submitKycData();setImageFlag('NEXT')">Yes</button>
+        <button type="button" class="btn btn-default yesno" data-dismiss="modal"
+          (click)="submitKycData();setImageFlag('NEXT')">Yes</button>
         <button type="button" class="btn btn-default yesno" data-dismiss="modal">No</button>
       </div>
     </div>

@@ -1,0 +1,302 @@
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+    <a href="javascript:void(0);">
+      <div class="img-anime pic">
+        <img
+          src="assets/img/insurer/logo_Blocksure-ver-01.png"
+          class="img-fluid"
+          alt="BlockSure logo"
+        />
+      </div>
+    </a>
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown pe-3">
+          <a
+            class="nav-link nav-profile d-flex align-items-center pe-0"
+            href="#"
+            data-bs-toggle="dropdown"
+          >
+            <img
+              src="../../../assets/img/Circle-icons-profile.svg.png"
+              height="24px"
+              alt="Profile"
+              class="rounded-circle"
+            />
+            <span class="d-none d-md-block dropdown-toggle ps-2"
+              >J. Doe</span
+            > </a
+          ><!-- End Profile Iamge Icon -->
+
+          <ul
+            class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+          >
+            <li class="dropdown-header">
+              <h6>John</h6>
+              <span>Doe</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item d-flex align-items-center"
+                href="javascript:void(0);"
+              >
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item d-flex align-items-center"
+                href="javascript:void(0);"
+              >
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item d-flex align-items-center"
+                href="javascript:void(0);"
+              >
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item d-flex align-items-center"
+                href="javascript:void(0);"
+                (click)="logout()"
+              >
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Profile Dropdown Items -->
+        </li>
+        <!-- End Profile Nav -->
+      </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+  </div>
+</header>
+<!-- End Header -->
+
+<main id="main">
+  <section id="why-us" class="why-us" style="padding-bottom: 20px !important">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 d-flex align-items-stretch">
+          <div class="content w-100">
+            <h3>Prospect Details</h3>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-stretch">
+          <div
+            class="col-lg-12 icon-boxes d-flex flex-column justify-content-center"
+          >
+            <div class="row">
+              <div class="col-xl-12 align-items-stretch">
+                <!-- Website Traffic -->
+                <div class="card mb-0">
+                  <div class="filter" style="text-align: right">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"
+                      ><i class="bi bi-three-dots"></i
+                    ></a>
+                    <ul
+                      class="dropdown-menu dropdown-menu-end dropdown-menu-arrow"
+                    >
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="card-body pb-0">
+                    <h5 class="card-title">KYC Status</h5>
+
+                    <div
+                      id="trafficChart"
+                      style="min-height: 250px"
+                      class="echart"
+                    ></div>
+                  </div>
+                </div>
+                <!-- End Website Traffic -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End .content-->
+      </div>
+    </div>
+  </section>
+
+  <section id="termLife" class="doctors" style="padding-top: 0px !important">
+    <div class="container">
+      <!-- Recent Sales -->
+      <div class="col-12">
+        <div class="card recent-sales overflow-auto">
+          <div class="card-body">
+            <h5 class="card-title">Insured Details</h5>
+            <table
+              id="example"
+              class="table table-striped table-bordered"
+              style="width: 100%"
+            >
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>DOB</th>
+                  <th>City</th>
+                  <th>State</th>
+                  <th>Primary Document</th>
+                  <th>KYC Status</th>
+                  <th>Policy and Claims History</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let insured of insureds; let i = index">
+                  <th>
+                    <a href="#">{{ i + 1 }}</a>
+                  </th>
+                  <td>{{ insured.firstName }} {{ insured.lastName }}</td>
+                  <td>{{ insured.dob }}</td>
+                  <td>{{ insured.city }}</td>
+                  <td>Westbengal</td>
+                  <td>
+                    <a href="javascript:void(0)" class="text-primary"
+                      >PAN No (**********)</a
+                    >
+                  </td>
+                  <td>
+                    <span
+                      class="badge bg-success"
+                      *ngIf="insured.status == 'Approved'"
+                      >Approved</span
+                    >
+                    <span
+                      class="badge bg-warning"
+                      *ngIf="insured.status == 'Pending'"
+                      >Pending</span
+                    >
+                    <span
+                      class="badge bg-danger"
+                      *ngIf="insured.status == 'Rejected'"
+                      >Rejected</span
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="text-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#basicModal"
+                      >See Details</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Doctors Section -->
+</main>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="container d-md-flex py-4">
+    <div class="me-md-auto text-center text-md-start">
+      <div class="copyright">
+        &copy; Copyright <strong><span>BlockSure</span></strong
+        >. All Rights Reserved
+      </div>
+    </div>
+    <div class="social-links text-center text-md-right pt-3 pt-md-0">
+      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+<!-- Basic Modal -->
+<div class="modal fade opacity-1 f-14" id="basicModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title f-16">Policy and Claims History</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <span style="font-weight: bold; color: #363ea8"
+            >Active Policies by LoB</span
+          >
+          <ul style="color: #150749">
+            <li>Personal Auto - 1</li>
+            <li>Home-Owners - 1</li>
+            <li>Pet Insurance - 1</li>
+            <li>Term Life - 1</li>
+          </ul>
+        </div>
+        <hr />
+        <div>
+          <span style="font-weight: bold; color: #363ea8"
+            >Claims History for past 3 years</span
+          >
+          <ul style="color: #150749">
+            <li>Open Claims - 1</li>
+            <li>Closed Claims - 1</li>
+            <li>Pending Claims - 1</li>
+            <li>Rejected Claims - 1</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer d-flex align-items-center">
+        <button
+          type="button"
+          class="btn btn-lg btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Basic Modal-->

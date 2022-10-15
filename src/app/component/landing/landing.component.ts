@@ -47,7 +47,7 @@ export class LandingComponent implements OnInit {
       firstName: "Debasis",
       lastName: "Das",
       dob: "1990-12-13",
-      country: "IN",
+      country: "India",
       phone: "9830012345",
       regNo: "WB12AM1593",
       pincode: "700001",
@@ -123,7 +123,6 @@ export class LandingComponent implements OnInit {
   }
 
   toKyc() {
-    console.log('toKyc()');
     sessionStorage.setItem("basicInfo", JSON.stringify(this.basicInfo));
     this.router.navigateByUrl("/kyc");
   }
