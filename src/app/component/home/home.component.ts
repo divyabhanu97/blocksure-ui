@@ -50,6 +50,8 @@ export class HomeComponent implements OnInit {
   frontbase64string;
   backbase64string;
 
+  showPopup: boolean = false
+
   spinnerMessage: any;
   imagecounter=0;
   //check:boolean= true;
@@ -74,8 +76,8 @@ export class HomeComponent implements OnInit {
   });
 
   merchantSuccess: boolean = false;
-  isAadharVerified: boolean = false;
-  isPanVerified: boolean = false;
+  isAadharVerified: boolean = true; // default false
+  isPanVerified: boolean = true; // default false
   isVkycVerified: boolean = true;
 
 
@@ -110,7 +112,7 @@ export class HomeComponent implements OnInit {
     private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    console.log(this.imageFlag, name)
+    // console.log(this.imageFlag, name)
     this.blockchainService.getAllAcquirerBanks().subscribe(data => {
       // console.log(data["data"]["response"])
       this.acquirerBanks = data["data"]["response"]
@@ -553,6 +555,7 @@ export class HomeComponent implements OnInit {
   }
 
   submitKycData() {
+    this.stepperIndex = this.stepperIndex + 1;
     this.imageFlag++;
     this.spinnerMessage = "analysing and verifying data..."
     this.spinner.show();

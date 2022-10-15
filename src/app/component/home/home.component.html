@@ -21,8 +21,9 @@
               <mat-form-field class="full-width" appearance="fill">
                 <mat-label style="
                 font-size: 15px;">Aadhaar Number</mat-label>
-                <input matInput placeholder="Aadhaar Number" formControlName="panNumber" minlength="12" maxlength="12" style="
-                font-size: 15px;"/>
+                <input matInput placeholder="Aadhaar Number" formControlName="panNumber" minlength="12" maxlength="12"
+                  style="
+                font-size: 15px;" />
               </mat-form-field>
               {{name}}
             </div>
@@ -43,11 +44,12 @@
             </div>
           </div>
         </form>
-          <div class="row" style="margin-top: 25px">
-            <div class="col-md-1"></div>
-            <div class="col-md-4" > <button  class="full-width" mat-button matStepperPrevious>Back</button></div>
-            <div class="col-md-1"></div>
-            <div class="col-md-4"><button  class="full-width" mat-button matStepperNext [disabled]="!isCorrectBankSelected" data-toggle="modal" data-target="#myModal"  >Next</button></div>
+        <div class="row" style="margin-top: 25px">
+          <div class="col-md-1"></div>
+          <div class="col-md-4"> <button class="full-width" mat-button matStepperPrevious>Back</button></div>
+          <div class="col-md-1"></div>
+          <div class="col-md-4"><button class="full-width" mat-button matStepperNext [disabled]="!isCorrectBankSelected"
+              data-toggle="modal" data-target="#myModal">Next</button></div>
         </div>
       </mat-step>
 
@@ -189,51 +191,51 @@
           </p>
           <!-- <mat-card-content> -->
           <div class="row" style="margin-top: 35px">
-            
+
             <div class="col-md-6">
               <!-- <mat-card> -->
-               
+
               <form [formGroup]="uploadForm" (ngSubmit)="upload()">
                 <div class="form-group row">
-                  <div class="col-md-5" >
-                  <label for="file-input1" class="btn btn-default" flow-btn style="padding-bottom: 37%;">
-                    <div class="preview" *ngIf="imgFile1">
-                      <img [src]="imgFile1" style="width: 100%" />
-                    </div>
-                    <div class="preview" *ngIf="!imgFile1">
-                      <mat-icon class="file_copy" style="font-size:larger"> description </mat-icon>
-                    </div>
-                    <p class="choose-file" *ngIf="!imgFile1">
-                      Click here to upload 
-                      <br/><b>Driving Licence</b> Front
-                    </p>
-                    <input type="file" class="form-control" id="file-input1" formControlName="file"
-                    (change)="onImage1Change($event)" style="visibility: hidden; position: absolute" multiple />
-                  </label>
+                  <div class="col-md-5">
+                    <label for="file-input1" class="btn btn-default" flow-btn style="padding-bottom: 37%;">
+                      <div class="preview" *ngIf="imgFile1">
+                        <img [src]="imgFile1" style="width: 100%" />
+                      </div>
+                      <div class="preview" *ngIf="!imgFile1">
+                        <mat-icon class="file_copy" style="font-size:larger"> description </mat-icon>
+                      </div>
+                      <p class="choose-file" *ngIf="!imgFile1">
+                        Click here to upload
+                        <br /><b>Driving Licence</b> Front
+                      </p>
+                      <input type="file" class="form-control" id="file-input1" formControlName="file"
+                        (change)="onImage1Change($event)" style="visibility: hidden; position: absolute" multiple />
+                    </label>
                   </div>
                   <div class="col-md-1"></div>
-                  <div class="col-md-5" >
-                  <label for="file-input2" class="btn btn-default" flow-btn style="padding-bottom: 37%;">
-                    <div class="preview" *ngIf="imgFile3">
-                      <img [src]="imgFile3" style="width: 100%" />
-                    </div>
-                    <div class="preview" *ngIf="!imgFile3">
-                      <mat-icon class="file_copy" style="font-size:larger"> description </mat-icon>
-                    </div>
-                    <p class="choose-file" *ngIf="!imgFile3">
-                      Click here to upload <br/><b>Driving Licence</b> Back
-                    </p>
-                    <input type="file" class="form-control" id="file-input2" formControlName="file"
-                    (change)="onImage3Change($event)" style="visibility: hidden; position: absolute" multiple />
-                  </label>
-                </div>
+                  <div class="col-md-5">
+                    <label for="file-input2" class="btn btn-default" flow-btn style="padding-bottom: 37%;">
+                      <div class="preview" *ngIf="imgFile3">
+                        <img [src]="imgFile3" style="width: 100%" />
+                      </div>
+                      <div class="preview" *ngIf="!imgFile3">
+                        <mat-icon class="file_copy" style="font-size:larger"> description </mat-icon>
+                      </div>
+                      <p class="choose-file" *ngIf="!imgFile3">
+                        Click here to upload <br /><b>Driving Licence</b> Back
+                      </p>
+                      <input type="file" class="form-control" id="file-input2" formControlName="file"
+                        (change)="onImage3Change($event)" style="visibility: hidden; position: absolute" multiple />
+                    </label>
+                  </div>
                 </div>
                 <!-- <button [ngClass]="!imgFile1 ? 'upload' : 'uploaded'" mat-raised-button type="submit" [disabled]="!imgFile1">
                     Upload Adhar Card
                     <mat-icon> insert_drive_file </mat-icon>
                   </button> -->
               </form>
-           
+
               <!-- </mat-card> -->
             </div>
             <div class="col-md-1"></div>
@@ -265,58 +267,59 @@
           <div class="row" style="margin-top: 35px">
             <div class="col-md-1"></div>
             <div class="col-md-4">
-              <h3  *ngIf="DLResult" style="margin-left:3%;font-size:20px !important;color:grey">Extracted DL Result : </h3>
+              <h3 *ngIf="DLResult" style="margin-left:3%;font-size:20px !important;color:grey">Extracted DL Result :
+              </h3>
               <mat-card *ngIf="DLResult">
-               
+
                 <div class="row">
                   <div class="col-md-5">
-                  <b>DL NUMBER</b>
+                    <b>DL NUMBER</b>
                   </div>
                   <div class="col-md-1"><b>:</b></div>
                   <div class="col-md-5" class="result">
                     <b>{{DLResult.Reference_Number}}</b>
-                    </div>
-                    
+                  </div>
+
                 </div>
                 <div class="row">
                   <div class="col-md-5">
-                  <b>NAME</b>
+                    <b>NAME</b>
                   </div>
                   <div class="col-md-1"><b>:</b></div>
                   <div class="col-md-5" class="result">
                     <b>{{DLResult.Name}}</b>
-                    </div>
-                    
+                  </div>
+
                 </div>
                 <div class="row">
                   <div class="col-md-5">
-                  <b> Validity</b>
+                    <b> Validity</b>
                   </div>
                   <div class="col-md-1"><b>:</b></div>
                   <div class="col-md-5" class="result">
                     <b>{{DLResult.Validity}}</b>
-                    </div>
-                    
+                  </div>
+
                 </div>
                 <div class="row">
                   <div class="col-md-5">
-                  <b>DOB</b>
+                    <b>DOB</b>
                   </div>
                   <div class="col-md-1"><b>:</b></div>
-                  <div class="col-md-5"  class="result">
+                  <div class="col-md-5" class="result">
                     <b>{{DLResult.Date_Of_Birth}}</b>
-                    </div>
-                    
+                  </div>
+
                 </div>
                 <div class="row">
                   <div class="col-md-5">
-                  <b>DateofIssue</b>
+                    <b>DateofIssue</b>
                   </div>
                   <div class="col-md-1"><b>:</b></div>
-                  <div class="col-md-5"  class="result">
+                  <div class="col-md-5" class="result">
                     <b>{{DLResult.Date_of_Issue}}</b>
-                    </div>
-                    
+                  </div>
+
                 </div>
                 <!-- <div class="row">
                   <div class="col-md-5">
@@ -332,62 +335,63 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-4">
-              <h3  *ngIf="aadharResult" style="margin-left:3%;font-size:20px !important;color:grey">Extracted AADHAR Result : </h3>
+              <h3 *ngIf="aadharResult" style="margin-left:3%;font-size:20px !important;color:grey">Extracted AADHAR
+                Result : </h3>
               <mat-card *ngIf="aadharResult">
-               
+
                 <div class="row">
                   <div class="col-md-5">
-                  <b>AADHAR NUM</b>
+                    <b>AADHAR NUM</b>
                   </div>
                   <div class="col-md-1"><b>:</b></div>
                   <div class="col-md-5" class="result">
                     <b>{{aadharResult.Aadhar_Number}}</b>
-                    </div>
-                    
+                  </div>
+
                 </div>
                 <div class="row">
                   <div class="col-md-5">
-                  <b>NAME</b>
+                    <b>NAME</b>
                   </div>
                   <div class="col-md-1"><b>:</b></div>
                   <div class="col-md-5" class="result">
                     <b>{{aadharResult.Name}}</b>
-                    </div>
-                    
+                  </div>
+
                 </div>
                 <div class="row">
                   <div class="col-md-5">
-                  <b> GENDER</b>
+                    <b> GENDER</b>
                   </div>
                   <div class="col-md-1"><b>:</b></div>
                   <div class="col-md-5" class="result">
                     <b>{{aadharResult.Gender}}</b>
-                    </div>
-                    
+                  </div>
+
                 </div>
                 <div class="row">
                   <div class="col-md-5">
-                  <b>DOB</b>
+                    <b>DOB</b>
                   </div>
                   <div class="col-md-1"><b>:</b></div>
-                  <div class="col-md-5"  class="result">
+                  <div class="col-md-5" class="result">
                     <b>{{aadharResult.Date_Of_Birth}}</b>
-                    </div>
-                    
+                  </div>
+
                 </div>
               </mat-card>
             </div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
 
             <section class="example-section col-md-8" [formGroup]="checkboxForm">
               <p>
-                <mat-checkbox class="example-margin" formControlName="consentShared" >I
+                <mat-checkbox class="example-margin" formControlName="consentShared">I
                   provide my consent to share my data with other Insurers to get my KYC verified</mat-checkbox>
               </p>
             </section>
-  
-          </div>
+
+          </div> -->
           <div class="row" style="margin-top: 25px">
             <div class="col-md-1"></div>
             <div class="col-md-4">
@@ -397,7 +401,7 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-4">
-              <button class="full-width" mat-raised-button matStepperNext (click)="setImageFlag('NEXT');submitKycData()"
+              <button class="full-width" mat-raised-button matStepperNextv data-toggle="modal" data-target="#myPopup"
                 [disabled]="!isVerified()">
                 Next
               </button>
@@ -405,26 +409,32 @@
           </div>
         </form>
       </mat-step>
-     
+
       <mat-step [stepControl]="finalFormGroup">
         <ng-template matStepLabel>Final Checks
           <span style="color: gainsboro">&nbsp;5 of 5</span>
         </ng-template>
-      
+
         <mat-card class="status-card">
           <mat-card-content>
             <h2 class="example-h2">Verification Status</h2>
 
             <section class="example-section">
-              <p class="row"><mat-checkbox class="example-margin" [(ngModel)]="isPanVerified" *ngIf="showPan">Driving Licence</mat-checkbox></p>
-                <p class="row"><mat-checkbox class="example-margin" [(ngModel)]="isAadharVerified" *ngIf="showAadhar">Aadhar Card</mat-checkbox></p>
-                  <!-- <p class="row"><mat-checkbox class="example-margin" [(ngModel)]="isVkycVerified" *ngIf="showVkyc">Video KYC</mat-checkbox></p> -->
+              <p class="row">
+                <mat-checkbox class="example-margin" [(ngModel)]="isPanVerified" *ngIf="showPan">Driving Licence
+                </mat-checkbox>
+              </p>
+              <p class="row">
+                <mat-checkbox class="example-margin" [(ngModel)]="isAadharVerified" *ngIf="showAadhar">Aadhar Card
+                </mat-checkbox>
+              </p>
+              <!-- <p class="row"><mat-checkbox class="example-margin" [(ngModel)]="isVkycVerified" *ngIf="showVkyc">Video KYC</mat-checkbox></p> -->
             </section>
             <p class="verification" *ngIf="showVerification">Verification Done.</p>
           </mat-card-content>
         </mat-card>
 
-        
+
         <div class="row" style="margin-top: 25px">
           <div class="col-md-1"></div>
           <div class="col-md-4">
@@ -493,26 +503,57 @@
     </div>
   </div>
 </div>
-<div *ngIf="showModal"class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
 
-    <!-- Modal content-->
+<!-- Share consent model -->
+<div *ngIf="showModal" class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <!-- <h4 class="modal-title">Modal Header</h4> -->
       </div>
       <div class="modal-body">
         <h4>Are you sure you want to provide consent to share the KYC documents submitted with
           {{selectBankForm.value.bankName}}</h4>
       </div>
       <div class="modal-footer">
-
-
         <button type="button" class="btn btn-default yesno" data-dismiss="modal"
           (click)="provideConsent(true)">Yes</button>
         <button type="button" class="btn btn-default yesno" data-dismiss="modal"
           (click)="provideConsent(false)">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Share consent model -->
+<div class="modal fade" id="myPopup" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content" style="width: 125%;">
+      <div class="modal-header">
+        <h3>Terms</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" style="font-size: 12px;" [formGroup]="checkboxForm">
+        <div>
+          <input type="checkbox" name="remember" value="true" id="rememberMe" formControlName="consentShared">
+          <span for="rememberMe" style="margin-left: 1%;">To authorize us to share your KYC details with other
+            Insurers, select checkbox</span>
+        </div>
+        <div>
+          <input type="checkbox" name="remember" value="true" id="rememberMe2">
+          <span for="rememberMe2" style="margin-left: 1%;">To authorize us to collect and share your Policy and Claims
+            details with other Insurers, select checkbox</span>
+        </div>
+        <div>
+          <input type="checkbox" name="remember" value="true" id="rememberMe3">
+          <span for="rememberMe3" style="margin-left: 1%;">To authorize us to collect and share your NCF or credit
+            score with other Insurers, select checkbox</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default yesno" data-dismiss="modal" (click)="submitKycData();setImageFlag('NEXT')">Yes</button>
+        <button type="button" class="btn btn-default yesno" data-dismiss="modal">No</button>
       </div>
     </div>
 
