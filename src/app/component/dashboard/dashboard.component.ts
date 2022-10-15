@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { stat } from "fs";
+import { BlockchainService } from "src/app/shared/services/blockchain/blockchain.service";
+// import { stat } from "fs";
 import * as echarts from "src/assets/vendor/echarts/echarts.min.js";
 
 @Component({
@@ -9,8 +10,10 @@ import * as echarts from "src/assets/vendor/echarts/echarts.min.js";
   styleUrls: ["./dashboard.component.scss"],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router,private blockchainService: BlockchainService) {}
 
+  merchantlist;
+  length:Number;
   insureds: Array<any> = [
     {
       firstName: "Debasis",
@@ -75,6 +78,13 @@ export class DashboardComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.blockchainService.getAllKycData().subscribe(data=>{
+      console.log(data["data"]["response"]["result"])
+      this.merchantlist=data["data"]["response"]["result"]
+      console.log(this.merchantlist.length)
+      this.length=Number(this.merchantlist.length)
+     
+    })
     // call this functions after data is fetched from API
     this.renderChart();
   }

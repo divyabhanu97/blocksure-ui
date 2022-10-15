@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
 
-  localurl : 'http://127.0.0.1:5006/',
-  extractionUrl : 'http://127.0.0.1:5006/',
+  localurl : 'http://127.0.0.1:5006',
+  extractionUrl : 'http://127.0.0.1:5006',
   // extractionUrl : 'http://20.198.243.63:5006/',
   blockchainUrl: 'http://20.198.243.63:4000/apis/v1/'
 };

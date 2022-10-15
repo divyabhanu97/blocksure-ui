@@ -179,9 +179,50 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let insured of insureds; let i = index">
+
+                <tr *ngFor="let insured of merchantlist; let i = index">
                   <th>
                     <a href="#">{{ i + 1 }}</a>
+                  </th>
+                  <td>{{ insured.merchantDetails.name }}</td>
+                  <td>{{ insured.merchantDetails.dob }}</td>
+                  <td>{{ insured.merchantDetails.city }}</td>
+                  <td>Westbengal</td>
+                  <td>
+                    <a href="javascript:void(0)" class="text-primary"
+                      >DL No (**********)</a
+                    >
+                  </td>
+                  <td>
+                    <span
+                      class="badge bg-success"
+                      *ngIf="insured.verificationStatus.panCard == 'Completed'"
+                      >Approved</span
+                    >
+                    <span
+                      class="badge bg-warning"
+                      *ngIf="insured.verificationStatus.panCard == 'Pending'"
+                      >Pending</span
+                    >
+                    <span
+                      class="badge bg-danger"
+                      *ngIf="insured.verificationStatus.panCard == 'Rejected'"
+                      >Rejected</span
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="text-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#basicModal"
+                      >See Details</a
+                    >
+                  </td>
+                </tr>
+                <tr *ngFor="let insured of insureds; let i = index">
+                  <th>
+                    <a href="#">{{ i + 1 + length }}</a>
                   </th>
                   <td>{{ insured.firstName }} {{ insured.lastName }}</td>
                   <td>{{ insured.dob }}</td>

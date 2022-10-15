@@ -46,6 +46,10 @@ export class BlockchainService {
     console.log("submitKycData Service Input",input);
     return this.http.put(path, input);
   }
+  getAllKycData(){
+    let path = this.url + "merchants";
+    return this.http.get(path);
+  }
 
   getAllMerchants()
   {

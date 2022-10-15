@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   name: string = '';
   isAllstepsRequired: boolean = true;
   durationInSeconds = 5;
-  stepperIndex = 2;
+  stepperIndex = 0;
   showModal: boolean = false;
   confirmationConsent: boolean = true;
   merchantDetails: any;
@@ -250,7 +250,7 @@ export class HomeComponent implements OnInit {
 
       this.blockchainService.getSingleMerchant(this.selectBankForm.value.panNumber).subscribe(data => {
 
-        // console.log(data["data"]["response"].length,data["data"]["response"],)
+        console.log(data["data"]["response"].length,data["data"]["response"],)
 
         let index = data["data"]["response"].length - 1;
         this.merchantDetails = data["data"]["response"][index]
@@ -285,7 +285,7 @@ export class HomeComponent implements OnInit {
           //   this.isAllstepsRequired = true;
           //   this.isCorrectBankSelected=false;
           // }
-          console.log(data["data"]["response"][index]["consentShared"])
+          // console.log(data["data"]["response"][index]["consentShared"])
           if (!this.isBankFound && data["data"]["response"].length > 0 && data["data"]["response"][index]["consentShared"] == true && data["data"]["response"][index]["bankId"] != this.selectBankForm.value.bankName) {
             // this.openSnackBar();
             console.log("KYC Initiated for selected bank");
@@ -295,11 +295,13 @@ export class HomeComponent implements OnInit {
           }
           else {
             if (!this.isBankFound) {
+              console.log("inside last else")
               this.isAllstepsRequired = true;
               this.showModal = false;
+              this.isCorrectBankSelected = true;
             }
           }
-          console.log(this.isAllstepsRequired);
+          // console.log(this.isAllstepsRequired);
 
 
         }
