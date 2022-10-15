@@ -11,16 +11,15 @@ export class LandingComponent implements OnInit {
   basicInfoCaptured: boolean = false;
   infoType: "life" | "auto" | "home";
   countryCodes = [
-    { name: "Australia", code: "AU" },
-    { name: "Canada", code: "CA" },
-    { name: "India", code: "IN" },
-    { name: "United States", code: "US" },
+    { value: 'India', viewValue: 'India' },
+    { value: 'USA', viewValue: 'USA' },
+    { value: 'Germany', viewValue: 'Germany' },
   ];
   basicInfo = {
     firstName: "",
     lastName: "",
     dob: "",
-    country: "IN",
+    country: "India",
     phone: "",
     regNo: "",
     pincode: "",

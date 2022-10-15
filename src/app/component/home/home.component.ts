@@ -122,6 +122,7 @@ export class HomeComponent implements OnInit {
     this.thirdFormGroup = new FormGroup({
       // thirdctrl: new FormControl('', [Validators.required]),
     })
+    this.copyBasicInfoFromSessionStorage();
   }
 
   //Store Merchant Information
@@ -609,5 +610,25 @@ export class HomeComponent implements OnInit {
 
   delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  copyBasicInfoFromSessionStorage() {
+    let item = sessionStorage.getItem('basicInfo');
+    try {
+      let basicInfo : any  = JSON.parse(item);
+      this.merchantForm  = new FormGroup({
+        name: new FormControl((basicInfo.firstName || '') + ' ' + (basicInfo.lastName || ''), [Validators.required]),
+        // panNumber: new FormControl('', [Validators.required]),
+        dob: new FormControl((basicInfo.dob || ''), [Validators.required]),
+        country: new FormControl((basicInfo.country || ''), [Validators.required]),
+        phone: new FormControl((basicInfo.phone || ''), [Validators.required]),
+        address: new FormControl('', [Validators.required]),
+        gender: new FormControl('', [Validators.required]),
+        postalCode: new FormControl((basicInfo.pincode || ''), [Validators.required]),
+        city: new FormControl('', [Validators.required]),
+      });
+    } catch {
+      console.error("invalid session info")
+    }
   }
 }

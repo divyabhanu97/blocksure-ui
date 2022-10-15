@@ -19,8 +19,10 @@
             <div class="col-md-3"></div>
             <div class="col-md-5">
               <mat-form-field class="full-width" appearance="fill">
-                <mat-label>AADHAR Number</mat-label>
-                <input matInput placeholder="AADHAR Number" formControlName="panNumber" />
+                <mat-label style="
+                font-size: 15px;">Aadhaar Number</mat-label>
+                <input matInput placeholder="Aadhaar Number" formControlName="panNumber" minlength="12" maxlength="12" style="
+                font-size: 15px;"/>
               </mat-form-field>
               {{name}}
             </div>
@@ -29,9 +31,11 @@
             <div class="col-md-3"></div>
             <div class="col-md-5">
               <mat-form-field class="full-width" appearance="fill">
-                <mat-label>Insurance Company</mat-label>
+                <mat-label style="
+                font-size: 15px;">Insurance Company</mat-label>
                 <mat-select (selectionChange)="BankSelected()" formControlName="bankName">
-                  <mat-option *ngFor="let item of acquirerBanks" [value]="item.orgName">
+                  <mat-option *ngFor="let item of acquirerBanks" [value]="item.orgName" style="
+                  font-size: 15px;">
                     {{ item.fullName }}
                   </mat-option>
                 </mat-select>
