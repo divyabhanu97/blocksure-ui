@@ -14,6 +14,8 @@ import { DatePipe } from '@angular/common';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatCheckboxModule } from '@angular/material';
 import { LandingComponent } from './component/landing/landing.component';
+import { AdminComponent } from './component/admin/admin.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LandingComponent } from './component/landing/landing.component';
     HomeComponent,
     HeaderComponent,
     LazyloadingDirective,
-    LandingComponent
+    LandingComponent,
+    AdminComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

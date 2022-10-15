@@ -76,8 +76,8 @@ export class HomeComponent implements OnInit {
   });
 
   merchantSuccess: boolean = false;
-  isAadharVerified: boolean = true; // default false
-  isPanVerified: boolean = true; // default false
+  isAadharVerified: boolean = false;
+  isPanVerified: boolean = false;
   isVkycVerified: boolean = true;
 
 
