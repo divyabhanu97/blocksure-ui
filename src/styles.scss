@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Gilroy-Regular";
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    background-color: white;
+    height: 9.5vh !important;
+    box-shadow: 0px 0px 5px 1px #959595;
+}
+
+.mat-step-label {
+    font-family: "Gilroy-Regular";
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active {
+    font-family: "Gilroy-Bold";
+}
+
+.mat-form-field {
+    top: 10px;
+}
+
+/* input color class */
+::ng-deep input.mat-input-element {
+    color: #484a4c;
+}
+
+/* Change label color on focused */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #50d0fb !important;
+}
+
+/* underline border color on focused */
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+    background-color: #50d0fb !important;
+}
+
+.mat-horizontal-stepper-header{
+    pointer-events: none !important;
+    background-color: transparent !important;
+}
+
+.green-snackbar {
+    background: rgb(14, 122, 54);
+    color: white;
+}
+.green-snackbar button {
+    background-color: rgb(14, 122, 54);
+    color: white;
+    border: none;
+}
+.red-snackbar {
+    background: #7c120b;
+    color: white;
+}
+.red-snackbar button {
+    background-color: #7c120b;
+    color: rgb(180, 156, 156) !important;
+    border: none;
+}
+
+@import url('./assets/vendor/fontawesome-free/css/all.min.css');
+@import url('assets/vendor/animate.css/animate.min.css');
+@import url('assets/vendor/bootstrap/css/bootstrap.min.css');
+@import url('assets/vendor/boxicons/css/boxicons.min.css');
+@import url('assets/vendor/glightbox/css/glightbox.min.css');
+@import url('assets/vendor/remixicon/remixicon.css');
+@import url('assets/vendor/swiper/swiper-bundle.min.css');
+@import url('./assets/theme/styles.css');
