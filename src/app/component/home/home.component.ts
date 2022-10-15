@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   name: string = '';
   isAllstepsRequired: boolean = true;
   durationInSeconds = 5;
-  stepperIndex = 0;
+  stepperIndex = 2;
   showModal: boolean = false;
   confirmationConsent: boolean = true;
   merchantDetails: any;
