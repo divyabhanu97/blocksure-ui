@@ -49,7 +49,8 @@ export class HomeComponent implements OnInit {
   aadharResult: any;
   frontbase64string;
   backbase64string;
-
+  aadharerror:boolean = false;
+  dlerror:boolean = false;
   showPopup: boolean = false
 
   spinnerMessage: any;
@@ -368,6 +369,9 @@ export class HomeComponent implements OnInit {
           },
             error => {
               console.log("Error", error);
+              this.dlerror = true;
+              this.isVkycVerified=false;
+              this.submitKycData();
               console.log("Driving Licence Verification Failed");
               this.openFailureSnackBar("Driving Licence Verification Failed")
               this.spinner.hide();
@@ -440,6 +444,9 @@ export class HomeComponent implements OnInit {
           },
             error => {
               console.log("Error", error);
+              this.dlerror = true;
+              this.isVkycVerified=false;
+              this.submitKycData();
               console.log("Driving Licence Verification Failed");
               this.openFailureSnackBar("Driving Licence Verification Failed")
               this.spinner.hide();
@@ -490,15 +497,21 @@ export class HomeComponent implements OnInit {
               this.isAadharVerified = true;
               console.log("Aadhar Card Verified Successfuly");
               this.openSuccessSnackBar("Aadhar Card Verified Successfuly")
+
             }
             else {
               console.log("Aadhar Card Verification Failed");
+              this.aadharerror=true;
+              // this.isAadharVerified=false;
               this.openFailureSnackBar("Aadhar Card Verification Failed")
             }
             this.spinner.hide();
           },
             error => {
               console.log("Error", error);
+              this.aadharerror = true;
+              this.isVkycVerified=false;
+              this.submitKycData();
               console.log("Aadhar Card Verification Failed");
               this.openFailureSnackBar("Aadhar Card Verification Failed")
               this.spinner.hide();

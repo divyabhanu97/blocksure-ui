@@ -188,7 +188,7 @@
                     <td>
                       <span
                         class="badge bg-success"
-                        *ngIf="insured.verificationStatus.vkyc == 'Approved'"
+                        *ngIf="insured.verificationStatus.vkyc == 'Completed'"
                         >Approved</span
                       >
                       <span
@@ -198,7 +198,7 @@
                       >
                       <span
                         class="badge bg-danger"
-                        *ngIf="insured.verificationStatus.vkyc == 'Rejected'"
+                        *ngIf="insured.verificationStatus.vkyc == 'Failed'"
                         >Rejected</span
                       >
                     </td>

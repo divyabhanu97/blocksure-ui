@@ -41,7 +41,7 @@ export class LandingComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.test();
+    // this.test();
   }
 
   test() {

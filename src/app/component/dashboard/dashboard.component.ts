@@ -101,7 +101,18 @@ export class DashboardComponent implements OnInit {
     let stats = [];
     
     this.merchantlist.forEach((insured: any) => {
+      if(insured.verificationStatus.vkyc == 'Completed')
+      {
+        map['Approved'] = map['Approved'] + 1;
+      }
+      else if(insured.verificationStatus.vkyc == 'Failed')
+      {
+        map['Rejected'] = map['Rejected'] + 1;
+      }
+      else
+      {
       map[insured.verificationStatus.vkyc] = map[insured.verificationStatus.vkyc] + 1;
+      }
     });
 
     Object.keys(map).forEach((key) => {
