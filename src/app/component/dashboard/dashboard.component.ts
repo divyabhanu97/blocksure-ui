@@ -83,10 +83,9 @@ export class DashboardComponent implements OnInit {
       this.merchantlist=data["data"]["response"]["result"]
       console.log(this.merchantlist.length)
       this.length=Number(this.merchantlist.length)
-     
+      this.renderChart();
     })
     // call this functions after data is fetched from API
-    this.renderChart();
   }
 
   logout() {
@@ -100,9 +99,9 @@ export class DashboardComponent implements OnInit {
       Rejected: 0,
     };
     let stats = [];
-
-    this.insureds.forEach((insured: any) => {
-      map[insured.status] = map[insured.status] + 1;
+    
+    this.merchantlist.forEach((insured: any) => {
+      map[insured.verificationStatus.vkyc] = map[insured.verificationStatus.vkyc] + 1;
     });
 
     Object.keys(map).forEach((key) => {

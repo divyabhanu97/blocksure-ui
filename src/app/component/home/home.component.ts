@@ -264,7 +264,9 @@ export class HomeComponent implements OnInit {
         else {
 
           for (var i = 0; i <= index; i++) {
-            if (data["data"]["response"][i]["bankId"] == this.selectBankForm.value.bankName) {
+            if (data["data"]["response"][i]["bankId"] == this.selectBankForm.value.bankName &&
+            data["data"]["response"][i]["verificationStatus"]["aadhaarCard"] == "Completed" &&
+            data["data"]["response"][i]["verificationStatus"]["panCard"] == "Completed") {
               this.openSnackBar();
               this.stepperIndex = 0;
               // this.imageReset();
