@@ -45,16 +45,16 @@ export class HomeComponent implements OnInit {
   confirmationConsent: boolean = true;
   merchantDetails: any;
   panResult: any;
-  DLResult:any;
+  DLResult: any;
   aadharResult: any;
   frontbase64string;
   backbase64string;
-  aadharerror:boolean = false;
-  dlerror:boolean = false;
+  aadharerror: boolean = false;
+  dlerror: boolean = false;
   showPopup: boolean = false
 
   spinnerMessage: any;
-  imagecounter=0;
+  imagecounter = 0;
   //check:boolean= true;
   checkboxForm = new FormGroup({
     consentShared: new FormControl('', [Validators.required])
@@ -211,33 +211,33 @@ export class HomeComponent implements OnInit {
       this.spinner.show();
       console.log(this.merchantDetails)
       this.merchantDetails.bankId = this.selectBankForm.value.bankName,
-      this.isPanVerified=this.merchantDetails.verificationStatus.panCard=='Completed'?true:false;
-      this.isAadharVerified=this.merchantDetails.verificationStatus.aadhaarCard=='Completed'?true:false;
-      this.isVkycVerified=this.merchantDetails.verificationStatus.vkyc=='Completed'?true:false;
-        this.blockchainService.saveMerchant(this.merchantDetails).subscribe(async result => {
-          this.imageFlag = 4;
-          console.log(result);
-          await this.delay(1000);
-          this.showPan = true;
-          await this.delay(1000);
-          this.showAadhar = true;
-          await this.delay(1000);
-          this.showVkyc = true;
-          await this.delay(1000);
-          this.showVerification = true;
-          this.merchantSuccess = true;
+        this.isPanVerified = this.merchantDetails.verificationStatus.panCard == 'Completed' ? true : false;
+      this.isAadharVerified = this.merchantDetails.verificationStatus.aadhaarCard == 'Completed' ? true : false;
+      this.isVkycVerified = this.merchantDetails.verificationStatus.vkyc == 'Completed' ? true : false;
+      this.blockchainService.saveMerchant(this.merchantDetails).subscribe(async result => {
+        this.imageFlag = 4;
+        console.log(result);
+        await this.delay(1000);
+        this.showPan = true;
+        await this.delay(1000);
+        this.showAadhar = true;
+        await this.delay(1000);
+        this.showVkyc = true;
+        await this.delay(1000);
+        this.showVerification = true;
+        this.merchantSuccess = true;
+        this.spinner.hide();
+
+        this.openSuccessSnackBar("Shared and validated data sucessfully")
+
+
+
+      },
+        error => {
+          console.log(error);
+          this.openFailureSnackBar("Failed to  save")
           this.spinner.hide();
-          
-          this.openSuccessSnackBar("Shared and validated data sucessfully")
-         
-          
-          
-        },
-          error => {
-            console.log(error);
-            this.openFailureSnackBar("Failed to  save")
-            this.spinner.hide();
-          })
+        })
 
     }
 
@@ -251,7 +251,7 @@ export class HomeComponent implements OnInit {
 
       this.blockchainService.getSingleMerchant(this.selectBankForm.value.panNumber).subscribe(data => {
 
-        console.log(data["data"]["response"].length,data["data"]["response"],)
+        console.log(data["data"]["response"].length, data["data"]["response"],)
 
         let index = data["data"]["response"].length - 1;
         this.merchantDetails = data["data"]["response"][index]
@@ -266,8 +266,8 @@ export class HomeComponent implements OnInit {
 
           for (var i = 0; i <= index; i++) {
             if (data["data"]["response"][i]["bankId"] == this.selectBankForm.value.bankName &&
-            data["data"]["response"][i]["verificationStatus"]["aadhaarCard"] == "Completed" &&
-            data["data"]["response"][i]["verificationStatus"]["panCard"] == "Completed") {
+              data["data"]["response"][i]["verificationStatus"]["aadhaarCard"] == "Completed" &&
+              data["data"]["response"][i]["verificationStatus"]["panCard"] == "Completed") {
               this.openSnackBar();
               this.stepperIndex = 0;
               // this.imageReset();
@@ -278,11 +278,11 @@ export class HomeComponent implements OnInit {
               this.isBankFound = true;
             }
             else if (data["data"]["response"][i]["bankId"] == this.selectBankForm.value.bankName &&
-            data["data"]["response"][i]["verificationStatus"]["aadhaarCard"] == "Pending" &&
-            data["data"]["response"][i]["verificationStatus"]["panCard"] == "Pending"){
-              this.merchantData=data["data"]["response"][i]
+              data["data"]["response"][i]["verificationStatus"]["aadhaarCard"] == "Pending" &&
+              data["data"]["response"][i]["verificationStatus"]["panCard"] == "Pending") {
+              this.merchantData = data["data"]["response"][i]
 
-              this.stepperIndex = 2;
+              this.stepperIndex = this.stepperIndex + 2;
               // this.imageReset();
               console.log("KYC Already Completed for selected Insurer");
 
@@ -341,53 +341,52 @@ export class HomeComponent implements OnInit {
           "frontbase64data": this.frontbase64string,
           "backbase64data": this.backbase64string
         }
-        this.imagecounter = this.imagecounter+1;
+        this.imagecounter = this.imagecounter + 1;
         // console.log("PAN card",base64string);
-        if(this.imagecounter==2)
-        {
+        if (this.imagecounter == 2) {
           this.spinner.show();
           console.log("inside loop");
-        this.extractionService.ExtractDL(input).subscribe(data => {
-          this.spinnerMessage = "validating driving licence..."
-          console.log("Driving Licence", data)
-          let merchantDLData: any = data;
-          this.DLResult = data;
-          this.blockchainService.verifyDL(merchantDLData.Reference_Number).subscribe(result => {
-            let blockchainResult: any = result;
-            let governmentData = blockchainResult.data.response.result;
-            console.log("Government Result", governmentData);
-            if (merchantDLData.Date_Of_Birth === governmentData.dob && merchantDLData.Name === governmentData.fullName &&  merchantDLData.Validity === governmentData.validity) {
-              this.isPanVerified = true;
-              console.log("Driving Licence Verified Successfuly");
-              this.openSuccessSnackBar("Driving Licence Verified Successfuly")
-            }
-            else {
-              console.log("Driving Licence Verification Failed");
-              this.openFailureSnackBar("Driving Licence Verification Failed")
-            }
-            this.spinner.hide();
+          this.extractionService.ExtractDL(input).subscribe(data => {
+            this.spinnerMessage = "validating driving licence..."
+            console.log("Driving Licence", data)
+            let merchantDLData: any = data;
+            this.DLResult = data;
+            this.blockchainService.verifyDL(merchantDLData.Reference_Number).subscribe(result => {
+              let blockchainResult: any = result;
+              let governmentData = blockchainResult.data.response.result;
+              console.log("Government Result", governmentData);
+              if (merchantDLData.Date_Of_Birth === governmentData.dob && merchantDLData.Name === governmentData.fullName && merchantDLData.Validity === governmentData.validity) {
+                this.isPanVerified = true;
+                console.log("Driving Licence Verified Successfuly");
+                this.openSuccessSnackBar("Driving Licence Verified Successfuly")
+              }
+              else {
+                console.log("Driving Licence Verification Failed");
+                this.openFailureSnackBar("Driving Licence Verification Failed")
+              }
+              this.spinner.hide();
+            },
+              error => {
+                console.log("Error", error);
+                this.dlerror = true;
+                this.isVkycVerified = false;
+                this.submitKycData();
+                console.log("Driving Licence Verification Failed");
+                this.openFailureSnackBar("Driving Licence Verification Failed")
+                this.spinner.hide();
+              })
+
           },
             error => {
+
               console.log("Error", error);
-              this.dlerror = true;
-              this.isVkycVerified=false;
-              this.submitKycData();
-              console.log("Driving Licence Verification Failed");
-              this.openFailureSnackBar("Driving Licence Verification Failed")
+
               this.spinner.hide();
+
             })
-
-        },
-          error => {
-
-            console.log("Error", error);
-
-            this.spinner.hide();
-
-          })
         }
 
-        
+
 
         this.imgFile1 = reader.result as string;
         this.uploadForm.patchValue({
@@ -401,7 +400,7 @@ export class HomeComponent implements OnInit {
     const reader = new FileReader();
     if (e.target.files && e.target.files.length) {
       this.spinnerMessage = "extracting Driving Licence card...";
-      
+
 
       const [file] = e.target.files;
       reader.readAsDataURL(file);
@@ -409,57 +408,56 @@ export class HomeComponent implements OnInit {
       reader.onload = () => {
         let result = reader.result as string
         this.backbase64string = result.substring(result.indexOf(',') + 1);
-        this.imgFile3= reader.result as string;
+        this.imgFile3 = reader.result as string;
         let input = {
           "frontbase64data": this.frontbase64string,
           "backbase64data": this.backbase64string
         }
-        this.imagecounter = this.imagecounter+1;
+        this.imagecounter = this.imagecounter + 1;
         this.uploadForm.patchValue({
           imgSrc: reader.result
         });
-        if(this.imagecounter==2)
-        {
+        if (this.imagecounter == 2) {
           this.spinner.show();
           console.log(input);
-        this.extractionService.ExtractDL(input).subscribe(data => {
-          this.spinnerMessage = "validating driving licence..."
-          console.log("Driving Licence", data)
-          let merchantDLData: any = data;
-          this.DLResult = data;
-          this.blockchainService.verifyDL(merchantDLData.Reference_Number).subscribe(result => {
-            let blockchainResult: any = result;
-            let governmentData = blockchainResult.data.response.result;
-            console.log("Government Result", governmentData);
-            if (merchantDLData.Date_Of_Birth === governmentData.dob && merchantDLData.Name === governmentData.fullName &&  merchantDLData.Validity === governmentData.validity) {
-              this.isPanVerified = true;
-              console.log("Driving Licence Verified Successfuly");
-              this.openSuccessSnackBar("Driving Licence Verified Successfuly")
-            }
-            else {
-              console.log("Driving Licence Verification Failed");
-              this.openFailureSnackBar("Driving Licence Verification Failed")
-            }
-            this.spinner.hide();
+          this.extractionService.ExtractDL(input).subscribe(data => {
+            this.spinnerMessage = "validating driving licence..."
+            console.log("Driving Licence", data)
+            let merchantDLData: any = data;
+            this.DLResult = data;
+            this.blockchainService.verifyDL(merchantDLData.Reference_Number).subscribe(result => {
+              let blockchainResult: any = result;
+              let governmentData = blockchainResult.data.response.result;
+              console.log("Government Result", governmentData);
+              if (merchantDLData.Date_Of_Birth === governmentData.dob && merchantDLData.Name === governmentData.fullName && merchantDLData.Validity === governmentData.validity) {
+                this.isPanVerified = true;
+                console.log("Driving Licence Verified Successfuly");
+                this.openSuccessSnackBar("Driving Licence Verified Successfuly")
+              }
+              else {
+                console.log("Driving Licence Verification Failed");
+                this.openFailureSnackBar("Driving Licence Verification Failed")
+              }
+              this.spinner.hide();
+            },
+              error => {
+                console.log("Error", error);
+                this.dlerror = true;
+                this.isVkycVerified = false;
+                this.submitKycData();
+                console.log("Driving Licence Verification Failed");
+                this.openFailureSnackBar("Driving Licence Verification Failed")
+                this.spinner.hide();
+              })
+
           },
             error => {
+
               console.log("Error", error);
-              this.dlerror = true;
-              this.isVkycVerified=false;
-              this.submitKycData();
-              console.log("Driving Licence Verification Failed");
-              this.openFailureSnackBar("Driving Licence Verification Failed")
+
               this.spinner.hide();
+
             })
-
-        },
-          error => {
-
-            console.log("Error", error);
-
-            this.spinner.hide();
-
-          })
         }
 
 
@@ -501,7 +499,7 @@ export class HomeComponent implements OnInit {
             }
             else {
               console.log("Aadhar Card Verification Failed");
-              this.aadharerror=true;
+              this.aadharerror = true;
               // this.isAadharVerified=false;
               this.openFailureSnackBar("Aadhar Card Verification Failed")
             }
@@ -510,7 +508,7 @@ export class HomeComponent implements OnInit {
             error => {
               console.log("Error", error);
               this.aadharerror = true;
-              this.isVkycVerified=false;
+              this.isVkycVerified = false;
               this.submitKycData();
               console.log("Aadhar Card Verification Failed");
               this.openFailureSnackBar("Aadhar Card Verification Failed")
@@ -586,7 +584,15 @@ export class HomeComponent implements OnInit {
   }
 
   submitKycData() {
-    this.stepperIndex = this.stepperIndex + 1;
+    console.log(this.stepperIndex)
+    if (this.stepperIndex == 0) {
+      this.stepperIndex = 3
+
+    }
+    else {
+      this.stepperIndex = this.stepperIndex + 1;
+    }
+
     this.imageFlag++;
     this.spinnerMessage = "analysing and verifying data..."
     this.spinner.show();
@@ -655,11 +661,11 @@ export class HomeComponent implements OnInit {
   }
 
   copyBasicInfoFromSessionStorage() {
-   
+
     try {
       let item = sessionStorage.getItem('basicInfo');
-      let basicInfo : any  = JSON.parse(item);
-      this.merchantForm  = new FormGroup({
+      let basicInfo: any = JSON.parse(item);
+      this.merchantForm = new FormGroup({
         name: new FormControl((basicInfo.firstName || '') + ' ' + (basicInfo.lastName || ''), [Validators.required]),
         // panNumber: new FormControl('', [Validators.required]),
         dob: new FormControl((basicInfo.dob || ''), [Validators.required]),
@@ -672,7 +678,7 @@ export class HomeComponent implements OnInit {
       });
 
       item = sessionStorage.getItem('provider');
-      
+
       this.selectBankForm = new FormGroup({
         bankName: new FormControl((item || ''), [Validators.required]),
         panNumber: new FormControl('', [Validators.required]),
