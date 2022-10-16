@@ -41,20 +41,20 @@ export class LandingComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // this.test();
+    this.setUpSampleData();
   }
 
-  test() {
-    this.basicInfo = {
-      firstName: "Debasis",
-      lastName: "Das",
-      dob: "1990-12-13",
-      country: "India",
-      phone: "9830012345",
-      regNo: "WB12AM1593",
-      pincode: "700001",
-      yearBuilt: "2012",
-    };
+  setUpSampleData() {
+    // this.basicInfo = {
+    //   firstName: "Debasis",
+    //   lastName: "Das",
+    //   dob: "1990-12-13",
+    //   country: "India",
+    //   phone: "9830012345",
+    //   regNo: "WB12AM1593",
+    //   pincode: "700001",
+    //   yearBuilt: "2012",
+    // };
 
     this.offers = [
       {
@@ -62,30 +62,35 @@ export class LandingComponent implements OnInit {
         img: "AHAM-Shield.png",
         name: "AHAM Shield",
         premium: "3,264",
+        orgName: 'ahamshield'
       },
       {
         insurerId: 2,
         img: "HDCInsurance.png",
         name: "HDC Insurance",
         premium: "4,123",
+        orgName: 'hdcinsurance'
       },
       {
         insurerId: 3,
         img: "care-for-you.png",
         name: "Care For You",
         premium: "4,338",
+        orgName: "careforu"
       },
       {
         insurerId: 4,
         img: "auto-care-x.png",
         name: "Auto Care X",
         premium: "4,791",
+        orgName: "autocarex"
       },
       {
         insurerId: 5,
         img: "VitaSecure.png",
         name: "Vita Secure",
         premium: "5,264",
+        orgName: "vitasecure"
       },
     ];
   }
@@ -157,8 +162,9 @@ export class LandingComponent implements OnInit {
     }
   }
 
-  toKyc() {
+  toKyc(orgName) {
     sessionStorage.setItem("basicInfo", JSON.stringify(this.basicInfo));
+    sessionStorage.setItem("provider", orgName);
     this.router.navigateByUrl("/kyc");
   }
 }

@@ -655,8 +655,9 @@ export class HomeComponent implements OnInit {
   }
 
   copyBasicInfoFromSessionStorage() {
-    let item = sessionStorage.getItem('basicInfo');
+   
     try {
+      let item = sessionStorage.getItem('basicInfo');
       let basicInfo : any  = JSON.parse(item);
       this.merchantForm  = new FormGroup({
         name: new FormControl((basicInfo.firstName || '') + ' ' + (basicInfo.lastName || ''), [Validators.required]),
@@ -669,6 +670,13 @@ export class HomeComponent implements OnInit {
         postalCode: new FormControl((basicInfo.pincode || ''), [Validators.required]),
         city: new FormControl('', [Validators.required]),
       });
+
+      item = sessionStorage.getItem('provider');
+      
+      this.selectBankForm = new FormGroup({
+        bankName: new FormControl((item || ''), [Validators.required]),
+        panNumber: new FormControl('', [Validators.required]),
+      })
     } catch {
       console.error("invalid session info")
     }

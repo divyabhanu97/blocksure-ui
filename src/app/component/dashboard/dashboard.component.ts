@@ -111,7 +111,7 @@ export class DashboardComponent implements OnInit {
       }
       else
       {
-      map[insured.verificationStatus.vkyc] = map[insured.verificationStatus.vkyc] + 1;
+        map[insured.verificationStatus.vkyc] = map[insured.verificationStatus.vkyc] + 1;
       }
     });
 
@@ -130,7 +130,7 @@ export class DashboardComponent implements OnInit {
         top: "5%",
         left: "center",
       },
-      color:['#70E917','#FBE600','#FF3232'],
+      color:['#198754','#FFC107','#DC3545'],
       series: [
         {
           name: "Access From",
@@ -154,6 +154,9 @@ export class DashboardComponent implements OnInit {
           data: stats,
         },
       ],
+      label: {
+        formatter:'{b}: ({d}%)'
+      }
     });
   }
 }

@@ -159,7 +159,10 @@
 
 
     <h1>Welcome to BlockSure</h1>
-    <h2>Your ONE-Stop shop for all your Insurance needs</h2>
+    <br/>
+    <br/>
+    <br/>
+    <!-- <h2>Your ONE-Stop shop for all your Insurance needs</h2> -->
     <!-- <h2>A secured blockchain based solution to ease client on-boarding <br>and keep track of the Insurance policies, payment and claim details<br> of an Insured across multiple Insurers</h2> -->
     <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
   </div>
@@ -246,8 +249,8 @@
   <section id="termLife" class="doctors" *ngIf="basicInfoCaptured">
     <div class="container">
       <div class="section-title">
-        <h2>Multiple Insurers</h2>
-        <p>Insured applies for term life Insurance from below insurer</p>
+        <h2>Best Offers For You</h2>
+        <!-- <p>Insured applies for term life Insurance from below insurer</p> -->
       </div>
 
       <!--card 01 start-->
@@ -301,7 +304,7 @@
                     </h5>
 
                     <div class="col-12">
-                      <button class="btn btn-lg btn-primary" style="background: #423b72;" type="button" (click)="toKyc()">
+                      <button class="btn btn-lg btn-primary" style="background: #423b72;" type="button" (click)="toKyc(offer.orgName)">
                         <h6>
                          <span class="value-txt f-16" style="color: #ffffff">&#8377;{{offer.premium}} &#8680;</span>
                         </h6>
@@ -355,7 +358,7 @@
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5
@@ -411,7 +414,7 @@
 
           <div class="row mb-3" *ngIf="infoType == 'life'">
             <div class="col-lg-12">
-              <label for="firstname" class="f-14">D.O.B.</label>
+              <label for="firstname" class="f-14">DOB (MM/DD/YYYY)</label>
               <input
                 type="date"
                 name="dob"

@@ -17,3 +17,241 @@ Date: 2022-10-16T05:59:26.561Z - Hash: 20dab93f8fd55d6594d2
 
 Time: 990ms
 [34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:07:02.116Z - Hash: b02a91bca1852d98959f
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 3044ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /kyc
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /home
+
+Date: 2022-10-16T06:07:04.115Z - Hash: df4c58f3d603df401dd6
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1391ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:07:20.407Z - Hash: b89c7202cd897b7ddfa1
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1773ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:09:35.146Z - Hash: 864829d132d8073dd21f
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 2346ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:11:20.513Z - Hash: b6b0395d82a09b85c42b
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 2022ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:12:00.600Z - Hash: cce544d2906680215399
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1822ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:13:29.021Z - Hash: 46caf1c1521ad28cd8f1
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 2060ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /kyc
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /home
+
+Date: 2022-10-16T06:13:31.028Z - Hash: 0ed8188d2b4bbc9b951a
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1395ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:13:49.400Z - Hash: c86e24024e6a29286f9f
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1180ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:14:47.010Z - Hash: 2897bdc07695b159a20c
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 2690ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:15:13.711Z - Hash: 1dbc44a9f2c742612409
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1694ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:15:30.197Z - Hash: 6505f15463b96770eb46
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 901ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:16:15.695Z - Hash: de813a7bd5dbe1160e89
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1848ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:17:05.809Z - Hash: ad7793b4c0943f477355
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1727ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:18:49.393Z - Hash: 5e47d07eff048bf8380f
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1973ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:19:42.919Z - Hash: 2423b82b1960942e49d9
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 2010ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:22:59.482Z - Hash: b8d04a47eecbbd6e613a
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 2467ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:23:20.524Z - Hash: a819b0393566b17bd2c9
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1438ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:24:06.883Z - Hash: a819b0393566b17bd2c9
+5 unchanged chunks
+
+Time: 1567ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /home
+
+Date: 2022-10-16T06:26:22.504Z - Hash: e506621adccae2fe82cd
+4 unchanged chunks
+chunk {styles} styles.js, styles.js.map (styles) 2.44 MB [initial] [rendered]
+Time: 6897ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:27:26.668Z - Hash: c81dfca8a37d8af49771
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 2483ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:28:17.396Z - Hash: cd47c3ca4ba169907eca
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1709ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:28:36.615Z - Hash: 74185eb6be5b5b093333
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 2112ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:28:50.294Z - Hash: 1e843519719d495f3f57
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 956ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:31:01.102Z - Hash: 7c5638fb6017221bd031
+5 unchanged chunks
+
+Time: 826ms
+[34mℹ[39m [90m｢wdm｣[39m: Failed to compile.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:31:31.261Z - Hash: ec5bcd4611d1b6fe6f5d
+5 unchanged chunks
+
+Time: 342ms
+[34mℹ[39m [90m｢wdm｣[39m: Failed to compile.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:32:47.290Z - Hash: 1e843519719d495f3f57
+5 unchanged chunks
+
+Time: 1801ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:33:21.511Z - Hash: 1e843519719d495f3f57
+5 unchanged chunks
+
+Time: 359ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /kyc
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /home
+
+Date: 2022-10-16T06:33:22.600Z - Hash: 1e843519719d495f3f57
+5 unchanged chunks
+
+Time: 500ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:41:54.962Z - Hash: b9e58c0b515a988eb49d
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 3025ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:42:23.769Z - Hash: 809aa5243fb7bf178d48
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 3475ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:42:44.244Z - Hash: 0a1fd4c28b7e4ba60a76
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1459ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T06:47:19.491Z - Hash: 6208798a063f9cd168e2
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 3264ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
