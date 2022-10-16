@@ -11,9 +11,9 @@ export class LandingComponent implements OnInit {
   basicInfoCaptured: boolean = false;
   infoType: "life" | "auto" | "home";
   countryCodes = [
-    { value: 'India', viewValue: 'India' },
-    { value: 'USA', viewValue: 'USA' },
-    { value: 'Germany', viewValue: 'Germany' },
+    { value: "India", viewValue: "India" },
+    { value: "USA", viewValue: "USA" },
+    { value: "Germany", viewValue: "Germany" },
   ];
   basicInfo = {
     firstName: "",
@@ -36,6 +36,8 @@ export class LandingComponent implements OnInit {
     yearBuilt: "",
   };
 
+  offers: Array<any> = [];
+
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -53,6 +55,39 @@ export class LandingComponent implements OnInit {
       pincode: "700001",
       yearBuilt: "2012",
     };
+
+    this.offers = [
+      {
+        insurerId: 1,
+        img: "AHAM-Shield.png",
+        name: "AHAM Shield",
+        premium: "3,264",
+      },
+      {
+        insurerId: 2,
+        img: "HDCInsurance.png",
+        name: "HDC Insurance",
+        premium: "4,123",
+      },
+      {
+        insurerId: 3,
+        img: "care-for-you.png",
+        name: "Care For You",
+        premium: "4,338",
+      },
+      {
+        insurerId: 4,
+        img: "auto-care-x.png",
+        name: "Auto Care X",
+        premium: "4,791",
+      },
+      {
+        insurerId: 5,
+        img: "VitaSecure.png",
+        name: "Vita Secure",
+        premium: "5,264",
+      },
+    ];
   }
 
   setInfoType(type: "life" | "auto" | "home") {

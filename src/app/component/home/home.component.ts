@@ -155,7 +155,7 @@ export class HomeComponent implements OnInit {
       console.log("Input", input);
       this.merchantData = input;
       this.blockchainService.saveMerchant(input).subscribe(result => {
-        this.openSuccessSnackBar("Data save successfully")
+        this.openSuccessSnackBar("Data saved successfully")
         console.log(result);
         this.merchantSuccess = true;
         this.spinner.hide();
@@ -275,6 +275,20 @@ export class HomeComponent implements OnInit {
               this.isAllstepsRequired = true;
               this.isCorrectBankSelected = false;
               this.isBankFound = true;
+            }
+            else if (data["data"]["response"][i]["bankId"] == this.selectBankForm.value.bankName &&
+            data["data"]["response"][i]["verificationStatus"]["aadhaarCard"] == "Pending" &&
+            data["data"]["response"][i]["verificationStatus"]["panCard"] == "Pending"){
+              this.merchantData=data["data"]["response"][i]
+
+              this.stepperIndex = 2;
+              // this.imageReset();
+              console.log("KYC Already Completed for selected Insurer");
+
+              this.isAllstepsRequired = true;
+              this.isCorrectBankSelected = false;
+              // this.isBankFound = true;
+
             }
           }
           // if(data["data"]["response"].length>0 && data["data"]["response"][0]["consentShared"] == true && data["data"]["response"][0]["bankId"] == this.selectBankForm.value.bankName )
@@ -588,6 +602,14 @@ export class HomeComponent implements OnInit {
   }
   openSnackBar() {
     this._snackBar.open("Already Applied", "Please Select New Insurer", {
+      duration: 3000,
+      panelClass: ['red-snackbar', 'login-snackbar'],
+    });
+
+  }
+
+  openInProgressSnackBar() {
+    this._snackBar.open("KYC Initiated", "Please Verify your Identites", {
       duration: 3000,
       panelClass: ['red-snackbar', 'login-snackbar'],
     });

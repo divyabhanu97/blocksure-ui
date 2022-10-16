@@ -86,3 +86,50 @@ Date: 2022-10-16T04:01:38.002Z - Hash: ef725042d2588b536640
 chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
 Time: 1978ms
 [34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T04:03:18.006Z - Hash: 9c8e5ab09bb2d1449fdc
+4 unchanged chunks
+chunk {styles} styles.js, styles.js.map (styles) 2.45 MB [initial] [rendered]
+Time: 5613ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T04:04:59.371Z - Hash: 5953dbc8100a9bcff1e9
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.16 MB [initial] [rendered]
+Time: 3633ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /polyfills.js.map
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /styles.js.map
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /vendor.js.map
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /main.js.map
+
+Date: 2022-10-16T04:05:02.756Z - Hash: 260b9e092c7ca1008ff0
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.16 MB [initial] [rendered]
+Time: 1938ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: wait until bundle finished: /assets/img/insurer/HDCInsurance.png
+
+Date: 2022-10-16T04:05:16.442Z - Hash: deaca91c10e6facbaace
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.15 MB [initial] [rendered]
+Time: 1626ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T04:06:30.638Z - Hash: deaca91c10e6facbaace
+5 unchanged chunks
+
+Time: 5049ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+
+Date: 2022-10-16T04:07:12.853Z - Hash: deaca91c10e6facbaace
+5 unchanged chunks
+
+Time: 723ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.

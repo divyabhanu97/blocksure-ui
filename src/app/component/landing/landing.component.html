@@ -188,7 +188,7 @@
             <div class="row">
               <div class="col-xl-4 align-items-stretch">
                 <a
-                  href="#termLife"
+                  href="javascript:void(0)"
                   class="col-sm-12"
                   data-toggle="modal"
                   data-target="#basicInfoModal"
@@ -204,7 +204,7 @@
 
               <div class="col-xl-4 d-flex align-items-stretch">
                 <a
-                  href="#auto"
+                  href="javascript:void(0)"
                   class="col-sm-12"
                   data-toggle="modal"
                   data-target="#basicInfoModal"
@@ -219,7 +219,7 @@
 
               <div class="col-xl-4 d-flex align-items-stretch">
                 <a
-                  href="#home"
+                  href="javascript:void(0)"
                   class="col-sm-12"
                   data-toggle="modal"
                   data-target="#basicInfoModal"
@@ -251,7 +251,7 @@
       </div>
 
       <!--card 01 start-->
-      <div class="row">
+      <div class="row" *ngFor="let offer of offers">
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
@@ -263,11 +263,11 @@
                   text-align: center;
                 "
               >
-                <div class="col-md-2 col-sm-12" style="text-align: center">
+                <div class="col-md-4 col-sm-12" style="text-align: center">
                   <div class="member d-flex">
                     <div class="img-anime pic">
                       <img
-                        src="assets/img/insurer/insurance-company.png"
+                        src="assets/img/insurer/{{offer.img}}"
                         class="img-fluid"
                         alt="BlockSure logo"
                       />
@@ -275,37 +275,35 @@
                   </div>
                 </div>
 
-                <div class="col-md-5 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                   <div class="row card-content">
-                    <h5 class="card-title font-insured-value">
+                    <h5 class="card-title font-insured-value f-18">
                       <i class="fa fa-snowflake-o" aria-hidden="true"></i
                       >Insured Value
                     </h5>
-                    <h6><span class="value-txt">&#8377;3,264</span></h6>
+                    <h6><span class="value-txt f-16">&#8377;{{offer.premium}}</span></h6>
                   </div>
                 </div>
 
-                <div class="col-md-5 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                   <div
                     class="row"
                     style="
                       text-align: center;
                       display: flex;
                       align-items: center;
-                      padding-top: 50px;
+                      padding-top: 40px;
                     "
                   >
-                    <h5 class="card-title font-insured-value">
+                    <h5 class="card-title font-insured-value f-18">
                       <i class="fa fa-snowflake-o" aria-hidden="true"></i>Yearly
                       premium starting from
                     </h5>
 
                     <div class="col-12">
-                      <button class="btn btn-primary" type="button" (click)="toKyc()">
+                      <button class="btn btn-lg btn-primary" type="button" (click)="toKyc()">
                         <h6>
-                         <span class="value-txt" style="color: #ffffff"
-                              >&#8377;3,264 &#8680;</span
-                            >
+                         <span class="value-txt f-16" style="color: #ffffff">&#8377;{{offer.premium}} &#8680;</span>
                         </h6>
                       </button>
                     </div>
@@ -317,146 +315,6 @@
         </div>
       </div>
       <!--card 01 End-->
-
-      <!--card 02 start-->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
-              <div
-                class="row"
-                style="
-                  vertical-align: middle;
-                  display: flex;
-                  text-align: center;
-                "
-              >
-                <div class="col-md-2 col-sm-12" style="text-align: center">
-                  <div class="member d-flex">
-                    <div class="img-anime pic">
-                      <img
-                        src="assets/img/insurer/insurance-2.jpg"
-                        class="img-fluid"
-                        alt="BlockSure logo"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-5 col-sm-12">
-                  <div class="row card-content">
-                    <h5 class="card-title font-insured-value">
-                      <i class="fa fa-snowflake-o" aria-hidden="true"></i
-                      >Insured Value
-                    </h5>
-                    <h6><span class="value-txt">&#8377;7,264</span></h6>
-                  </div>
-                </div>
-
-                <div class="col-md-5 col-sm-12">
-                  <div
-                    class="row"
-                    style="
-                      text-align: center;
-                      display: flex;
-                      align-items: center;
-                      padding-top: 50px;
-                    "
-                  >
-                    <h5 class="card-title font-insured-value">
-                      <i class="fa fa-snowflake-o" aria-hidden="true"></i>Yearly
-                      premium starting from
-                    </h5>
-
-                    <div class="col-12">
-                      <button class="btn btn-primary" type="submit">
-                        <h6>
-                          <a href="#"
-                            ><span class="value-txt" style="color: #ffffff"
-                              >&#8377;3,964 &#8680;</span
-                            ></a
-                          >
-                        </h6>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--card 02 End-->
-
-      <!--card 03 start-->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
-              <div
-                class="row"
-                style="
-                  vertical-align: middle;
-                  display: flex;
-                  text-align: center;
-                "
-              >
-                <div class="col-md-2 col-sm-12" style="text-align: center">
-                  <div class="member d-flex">
-                    <div class="img-anime pic">
-                      <img
-                        src="assets/img/insurer/the-insurer.jpg"
-                        class="img-fluid"
-                        alt="BlockSure logo"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-5 col-sm-12">
-                  <div class="row card-content">
-                    <h5 class="card-title font-insured-value">
-                      <i class="fa fa-snowflake-o" aria-hidden="true"></i
-                      >Insured Value
-                    </h5>
-                    <h6><span class="value-txt">&#8377;8,264</span></h6>
-                  </div>
-                </div>
-
-                <div class="col-md-5 col-sm-12">
-                  <div
-                    class="row"
-                    style="
-                      text-align: center;
-                      display: flex;
-                      align-items: center;
-                      padding-top: 50px;
-                    "
-                  >
-                    <h5 class="card-title font-insured-value">
-                      <i class="fa fa-snowflake-o" aria-hidden="true"></i>Yearly
-                      premium starting from
-                    </h5>
-
-                    <div class="col-12">
-                      <button class="btn btn-primary" type="submit">
-                        <h6>
-                          <a href="#"
-                            ><span class="value-txt" style="color: #ffffff"
-                              >&#8377;4,264 &#8680;</span
-                            ></a
-                          >
-                        </h6>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--card 03 End-->
     </div>
   </section>
   <!-- End Doctors Section -->
@@ -583,8 +441,6 @@
                     [(ngModel)]="basicInfo.country"
                     required
                   >
-                    <option *ngFor="let c of countryCodes" [value]="c.code">
-                      {{ c.code }}
                     <option *ngFor="let c of countryCodes" [value]="c.value">
                       {{ c.viewValue }}
                     </option>
